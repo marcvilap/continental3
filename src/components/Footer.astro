@@ -1,0 +1,21 @@
+---
+import { Picture } from 'astro:assets'
+import Icon from '$components/Icon.astro'
+import imgFooter from '$assets/images/footer.webp'
+---
+
+<footer class="relative text-center">
+	<div class="on-view-zoom-in absolute inset-0">
+		<Picture class="size-full object-cover" src={imgFooter} width={1920} widths={[1920, 1280, 768]} formats={['avif']} fallbackFormat={'jpg'} alt="" />
+		<span class="bg-noise absolute inset-x-0 top-0 h-56 rotate-180 bg-bottom bg-no-repeat"></span>
+	</div>
+	<div class="container relative flex min-h-svh flex-col items-center gap-8 py-16">
+		<div class="reveal-group m-auto max-w-2xl text-xl font-bold">
+			<p class="reveal-fade-up">Utilizar neumáticos adecuados a las estaciones del año es fundamental. Además de mejorar la seguridad general del vehículo, <strong class="text-[#F3A83B]">optimiza el rendimiento del mismo, su estabilidad en la carretera y la eficiencia en el consumo</strong>. También ayuda a prolongar su vida útil. Si eres de los que cree que conducir es un arte, tus neumáticos deben tener los pinceles que trazan la mejor curva.</p>
+		</div>
+		<div>
+			<p class="mb-6 text-sm">ElTiempo Content para</p>
+			<Icon class="w-44" name="logotype" />
+		</div>
+	</div>
+</footer>

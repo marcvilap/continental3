@@ -1,0 +1,21 @@
+---
+import { Picture } from 'astro:assets'
+
+interface Props {
+	title: string
+	image: ImageMetadata
+	reverse?: boolean
+}
+
+const { title, image, reverse } = Astro.props
+---
+
+<article class="reveal-group container mb-16 grid items-center gap-y-16 text-neutral-300 lg:grid-cols-2 xl:mb-32 xl:gap-x-20">
+	<div class={'max-md:-mx-8 ' + (reverse ? 'lg:order-2 lg:translate-x-8 xl:translate-x-20' : 'lg:-translate-x-8 xl:-translate-x-20')}>
+		<Picture class={'w-full ' + (reverse ? 'reveal-fade-left' : 'reveal-fade-right')} src={image} width={780} widths={[780]} formats={['avif']} fallbackFormat={'jpg'} alt="" />
+	</div>
+	<div class={'grid gap-6 ' + (reverse ? 'reveal-fade-right' : 'reveal-fade-left')}>
+		<h2 class="text-4xl font-bold uppercase md:text-6xl">{title}</h2>
+		<slot />
+	</div>
+</article>

@@ -1,0 +1,89 @@
+---
+import { Picture } from 'astro:assets'
+import BaseLayout from '$layouts/BaseLayout.astro'
+import Icon from '$components/Icon.astro'
+import FeatureBlock from '$components/FeatureBlock.astro'
+import videoHero from '$assets/videos/hero.mp4'
+import imgBanner01 from '$assets/images/banner01.webp'
+import imgBanner02 from '$assets/images/banner02.webp'
+import imgBanner03 from '$assets/images/banner03.webp'
+import imgFeature01 from '$assets/images/feature01.webp'
+import imgFeature02 from '$assets/images/feature02.webp'
+import imgFeature03 from '$assets/images/feature03.webp'
+import imgFeature04 from '$assets/images/feature04.webp'
+---
+
+<BaseLayout>
+	<div class="reveal-group relative">
+		<video class="absolute size-full object-cover opacity-50" src={videoHero} autoplay muted loop playsinline></video>
+		<span class="bg-noise absolute inset-x-0 bottom-0 h-56 bg-bottom bg-no-repeat"></span>
+		<div class="min-h-hero container relative flex flex-col justify-between gap-8 pb-8">
+			<a class="reveal-fade-down flex w-44 flex-col items-center self-center bg-[#F3A83B] p-4 text-xs text-black" href="/">
+				<strong>Sin dejar huella</strong>
+				<span>Un proyecto de</span>
+				<Icon class="mt-2" name="logotype" />
+			</a>
+			<h1 class="text-4xl font-bold uppercase opacity-70 md:text-8xl">
+				<span class="reveal-text reveal-delay-000 inline-block">Dime</span>
+				<span class="reveal-text reveal-delay-100 inline-block">qué</span>
+				<span class="reveal-text reveal-delay-200 inline-block">tiempo</span>
+				<span class="reveal-text reveal-delay-300 inline-block">hace</span>
+				<span class="reveal-text reveal-delay-400 inline-block">y</span>
+				<span class="reveal-text reveal-delay-500 inline-block">te</span>
+				<span class="reveal-text reveal-delay-600 inline-block">diré</span>
+				<span class="reveal-text reveal-delay-700 inline-block">qué</span>
+				<span class="reveal-text reveal-delay-800 inline-block">neumático</span>
+				<span class="reveal-text reveal-delay-900 inline-block">usar</span>
+			</h1>
+			<div class="w-full self-center text-[#F3A83B] xl:max-w-4xl">
+				<p class="reveal-fade-up ml-auto xl:max-w-2xl">España es un país con condiciones climáticas muy cambiantes, especialmente en verano e invierno, utilizar un neumático adaptado a las diferentes climatologías no solo optimiza el rendimiento de tu vehículo, sino que proporciona una mejor respuesta en la dirección, y te da una mayor estabilidad en la carretera y eficiencia en el consumo de combustible.</p>
+			</div>
+			<a class="w-8 self-center" href="#scroll-down">
+				<Icon class="animate-bounce" name="mouse" />
+			</a>
+		</div>
+	</div>
+
+	<div id="scroll-down"></div>
+
+	<div class="py-16 xl:py-32">
+		<div class="reveal-group container">
+			<div class="reveal-fade-up mx-auto grid gap-6 xl:max-w-4xl">
+				<p>Échale un vistazo a tu armario. ¿Cuántos tipos de jerséis tienes? Los de lana y cuello vuelto para el invierno son imprescindibles, la chaqueta de punto de entretiempo es otro must, y los jerseys de algodón ligero de colores son perfectos para el verano. Lo cierto es que tu cuerpo reclama una prenda de vestir adecuada según la estación del año.</p>
+				<p>Ahora échale un vistazo a tu coche. ¿Te has parado a pensar en las <strong>condiciones óptimas para disfrutar de una conducción segura</strong> y sacarle el mejor partido a tu vehículo? Aquí entran en juegos los neumáticos, porque no es lo mismo conducir en Asturias por montaña y en un asfalto resbaladizo que hacerlo en Almería, en una autopista con suelo firme a 40 grados. Al igual que tu cuerpo, tu vehículo funcionará mejor si tiene un neumático adecuado al clima imperante.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="on-view-zoom-in relative aspect-square md:aspect-[2/1]">
+		<Picture class="cross-fade-1 absolute left-0 top-0 size-full object-cover" src={imgBanner01} width={1920} widths={[1920, 1280, 768]} formats={['avif']} fallbackFormat={'jpg'} alt="" />
+		<Picture class="cross-fade-2 absolute left-0 top-0 size-full object-cover" src={imgBanner02} width={1920} widths={[1920, 1280, 768]} formats={['avif']} fallbackFormat={'jpg'} alt="" />
+		<Picture class="cross-fade-3 absolute left-0 top-0 size-full object-cover" src={imgBanner03} width={1920} widths={[1920, 1280, 768]} formats={['avif']} fallbackFormat={'jpg'} alt="" />
+	</div>
+
+	<div class="py-16 xl:py-32">
+		<div class="reveal-group container">
+			<h2 class="reveal-fade-up text-2xl font-bold uppercase md:text-4xl xl:max-w-2xl">La elección de neumáticos debe basarse en el tipo de conducción que realizas y en las condiciones específicas de la región en la que vives. Y <a class="text-[#F3A83B] underline" href="">Continental</a> tiene la solución perfecta para cada uno de nosotros.</h2>
+		</div>
+	</div>
+
+	<FeatureBlock title="Kilómetros bajo la lluvia" image={imgFeature01} reverse>
+		<p>Pocas cosas hay más placenteras que atravesar un bosque bajo la lluvia con tu música preferida. Conducir bajo un temporal de agua tiene sus riesgos, ya que la distancia de frenado se alarga y la visibilidad se reduce. La conducción debe ser suave, evitando los frenazos.</p>
+		<p>Tu mejor aliado para evitar contratiempos es el neumático <a class="font-bold text-[#F3A83B] underline" href="">UltraContact</a> de Continental. La tecnología de su nuevo compuesto YellowChili, te permitirá rodar kilómetros y kilómetros con un excelente rendimiento de agarre en mojado con un mínimo nivel de ruido.</p>
+	</FeatureBlock>
+
+	<FeatureBlock title="Emoción bajo la  nieve" image={imgFeature02}>
+		<p>Sabemos que se te ilumina la cara cuando caen los primeros copos de nieve. Conducir bajo la nieve y desafiar las condiciones más adversas es territorio de los más entusiastas de la conducción. Y tú eres uno de ellos. Encontrar el aliado perfecto para conquistar los desafíos invernales es fundamental.</p>
+		<p>Aquí entran en juego los Continental <a class="font-bold text-[#F3A83B] underline" href="">WinterContact TS 860 S</a>, unos neumáticos cuyo diseño te proporcionarán un agarre excepcional. Esculpido con la precisión de los grandes artesanos, los WinterContact transforman el temor de unas carreteras resbaladizas en una experiencia de conducción segura y controlada.</p>
+	</FeatureBlock>
+
+	<FeatureBlock title="Para los amantes de la velocidad" image={imgFeature03} reverse>
+		<p>Si te gustan las emociones fuertes y lo que te apasiona es la velocidad, ten en cuenta que la elección de neumático es la llave maestra que desbloquea un rendimiento excepcional. Con los neumáticos <a class="font-bold text-[#F3A83B] underline" href="">SportContact 7</a> de Continental te sentirás como un bailarín del Bolshoi. El secreto de este neumático no es solo su adherencia a la carretera, sino su poco desgaste.</p>
+		<p>Como los buenos cócteles, la tecnología BlackChili del compuesto le da una flexibilidad a la goma que combina a las mil maravillas con la rigidez del dibujo del patrón. Un neumático deportivo que se adapta a todo tipo de vehículos bajo el sol, y que ofrece una versatilidad que también lo hacen ideal para conducir bajo lluvia.</p>
+	</FeatureBlock>
+
+	<FeatureBlock title="En busca del equilibrio perfecto" image={imgFeature04}>
+		<p>Cada estación presenta un desafío, si buscas un rendimiento constante a lo largo del año, lo vas a encontrar con los neumáticos de Continental <a class="font-bold text-[#F3A83B] underline" href="">AllSeasonContact</a>. Como si de una orquesta sinfónica se tratase, estos polifacéticos neumáticos son la sinfonía perfecta entre la tracción del invierno y la resistencia del verano, ofreciendo el equilibrio perfecto para conducir sin preocuparse del clima.</p>
+		<p>Su secreto está en el compuesto Traction Silica Compound, que permite al neumático mantenerse flexible y adaptarse tanto a carreteras secas, húmedas o cubiertas por nieve. Si eres de los que busca la libertad de la carretera sin tener que cambiar neumáticos, los AllSeasonContact ofrecen el equilibrio perfecto entre rendimiento, seguridad y comodidad.</p>
+	</FeatureBlock>
+</BaseLayout>
